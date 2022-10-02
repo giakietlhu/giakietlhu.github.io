@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/Farm/Framstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Farm/Farmjs.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    
+    <title>Document</title>
+    <style>
+        #data-wrapper {
+            border: 1px solid;
+            width: 100%;
+            text-align: center;
+            table-layout: fixed;
+            margin-top: 20px;
+        }
+
+        th {
+            border-right: 1px solid;
+        }
+
+        td {
+            border-right:1px solid #000 ;
+            border-top: 1px solid #000;
+            overflow: hidden;
+            text-overflow: ellipsis; 
+        }
+
+        button {
+            margin: 12px 0;
+        }
+
+        form {
+            padding-left: 12px;
+            /* display: none; */
+        }
+
+        #harvest-btn, .click-me {
+            cursor: pointer;
+            width: 100px;
+            height: 30px;
+
+        }
+
+        .display-block {
+            display: block;
+        }
+
+        .click-me {
+            margin-left: 12px;
+            display: none;
+        }
+        #main {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 10px;
+        background-image: linear-gradient(-225deg, #E3FDF5 50%, #FFE6FA 50%);
+        width: 40%;
+        margin-left: 30%;
+        margin-top: 20px;
+        margin-top: 20px;
+        
+    }
+    #name-harvest{
+        width: 80%;
+        padding: 12.8px 20px 12.8px 50px;
+        margin: 10px 0;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        
+    }
+    p{
+        font-size: 20px;
+    }
+    P1{
+        margin-left: 35%;
+        font-size: 60px;
+        font-weight: bold;
+        
+    }
+    .wrapper1{
+    
+    width: 100%;
+    height: 100px;
+
+}
+a{
+    color: #000;
+    margin-left: 20px;
+    font-size: 20px;
+    
+}
+h3{
+    font-size: 50px;
+}
+    </style>
+</head>
+
+<body>
+    <div class="wrapper1">
+        <nav id="sidebar" class="d-md-block collapse ">
+            <div class="sidebar-header">
+                <h3>Quản lý trang trại</h3>
+            </div>
+            <ul class="lisst-unstyled components">
+                <li>
+                    <a class="active" href="/Form/form.html">User</a>
+                </li>
+                <li>
+                    <a class="active" href="/Index/index.html">Danh sách User</a>
+                </li>
+                <li >
+                    <a href="/Farm/FarmUser.html">Farm</a>
+                </li>
+                
+            </ul>
+            </ul>
+        </nav>
+
+    <div>
+    <div class="wrapper">
+        <P1>Quản Lí Mùa Vụ</P1>
+        <form action="" id="main">
+            <!-- Name -->
+            <div class="form-create-body-name full">
+                <label for="name-harvest" class="form-create-body-title">
+                    <p>Tên Mùa Vụ*</p>
+                </label>
+                <input type="text" placeholder="Name" class="form-create-body-input" id="name-harvest">
+            </div>
+
+            <!-- Sản lượng -->
+            <div class="form-create-body-name full">
+                <label for="name-harvest" class="form-create-body-title">
+                    <p>Sản Lượng (kg)*</p>
+                </label>
+                <input type="number" placeholder="Quantity" class="form-create-body-input" id="name-harvest">
+            </div>
+
+            <!-- Start time -->
+            <div class="form-create-body-name full">
+                <label for="name-harvest" class="form-create-body-title">
+                    <p>Ngày Bắt Đầu*</p>
+                </label>
+                <input type="date" class="form-create-body-input" id="date-start-input"> 
+            </div>
+
+            <!-- End -->
+            <div class="form-create-body-name full">
+                <label for="name-harvest" class="form-create-body-title">
+                    <p>Ngày Kết Thúc*</p>
+                </label>
+                <input type="date" class="form-create-body-input" id="date-end-input">
+            </div>
+
+            <!-- Submit -->
+            <div class="form-create-body-name full">
+                <button type="button" class="btn btn-success" id="harvest-btn">Submit</button>
+            </div>
+        </form>
+
+        <button class="click-me">Save</button>
+
+        <table id="data-wrapper">
+            <thead>
+                <th>Stt</th>
+                <th>Tên</th>
+                <th>Sản lượng (kg)</th>
+                <th>Ngày bắt đầu </th>
+                <th>Ngày kết thúc</th>
+                <th>Trạng thái</th>
+                <th>Sửa</th>
+                <th>Xóa</th>
+            </thead>
+            <tbody>
+
+
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/Farm/Farmjs.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+
+</html>
